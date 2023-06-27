@@ -1,6 +1,7 @@
 import React from 'react'
 
 function List({ change, setChange, list, setList }) {
+    let local = JSON.parse(localStorage.getItem("mySorage"));
 
     return (
         <div className='bg-dark w-100  text-light con '>
@@ -17,6 +18,7 @@ function List({ change, setChange, list, setList }) {
                     let newList = list;
                     newList.push(change);
                     setList(newList);
+                    localStorage.setItem("mySorage",JSON.stringify(newList));
                     setChange("");
                     inp.value="";
                   
@@ -27,9 +29,12 @@ function List({ change, setChange, list, setList }) {
                 
             </div>
             <div className='mt-5 d-flex flex-column '>
+
+                
             
             
-            {list.map((item,key)=>(
+            {local.map((item,key)=>(
+                
                 
                     <h3 className='list' key={key}>{item}</h3>
                
