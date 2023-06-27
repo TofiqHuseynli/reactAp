@@ -16,7 +16,6 @@ function List({ change, setChange, list, setList }) {
         }
     };
     let funcDelete = ({id})=>{
-
         setList(list.filter((todo)=>todo.id !== id));
         localStorage.removeItem(id == id);
     }
