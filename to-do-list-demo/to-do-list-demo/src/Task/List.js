@@ -1,7 +1,6 @@
 import React from 'react'
 import Swal from 'sweetalert2';
 
-
 function List({ change, setChange, list, setList }) {
     const [t,setT]= React.useState(0);
     let onClic =()=>{
@@ -15,21 +14,12 @@ function List({ change, setChange, list, setList }) {
             setT(t+1);  
             localStorage.setItem("mySorage", JSON.stringify(newList));
         }
-      
     };
-  
-    
-    
-
     let funcDelete = ({id})=>{
 
         setList(list.filter((todo)=>todo.id !== id));
         localStorage.removeItem(id == id);
-        
     }
-
-    
-
     return (
         <div className='bg-dark w-100  text-light con '>
             <div className='te container d-flex flex-column '>
@@ -43,7 +33,6 @@ function List({ change, setChange, list, setList }) {
                         <div className='control'>
                             <button className='control-btn' ><i class="fa fa-pen-to-square"></i></button>
                             <button className='control-btn' onClick={()=>funcDelete(item)}  ><i class="fa fa-trash"></i></button>
-                        
                       </div>
                         </div>
                     ))
@@ -53,7 +42,6 @@ function List({ change, setChange, list, setList }) {
         </div>
     )
 }
-
 export default List
 
 

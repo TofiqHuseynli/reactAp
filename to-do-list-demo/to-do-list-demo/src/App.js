@@ -1,8 +1,6 @@
 import React from "react";
 import List from "./Task/List";
 
-
-
 function App() {
   const [change,setChange]=React.useState("");
   const [list,setList]=React.useState(JSON.parse(localStorage.getItem("mySorage")) || []);
